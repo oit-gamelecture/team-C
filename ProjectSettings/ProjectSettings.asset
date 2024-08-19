@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 26
-  productGUID: 6163d0326d5d8a84184fc10b813e406c
+  productGUID: 0f894fc3cee774b4db268ecfe87b2c4a
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: teamC Unity
+  productName: C-test1
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -672,14 +672,14 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: teamC Unity
+  metroPackageName: C-test1
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: teamC Unity
+  metroApplicationDescription: C-test1
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -748,11 +748,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 063bed9d-1064-423e-bbf8-5d02ecceac14
+  cloudProjectId: d7113ffa-fcc8-4a69-8893-bfd90edaea92
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: teamC Unity 2024-08-11_16-36-34
-  organizationId: ramutarou
+  projectName: C-test1
+  organizationId: e1c23016
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
