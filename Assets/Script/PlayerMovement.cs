@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public float leftRightSpeed = 4f;
     public float limit = 5f;
     public Animator animator;
+    public bool hit;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,11 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(hit == true)
+        {
+            StartCoroutine("Hoge");
+        }
+        else{
         transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed, Space.World);
         moveSpeed += Time.deltaTime * acceleration;
 
@@ -42,6 +48,20 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetTrigger("a_Jump");
         }
+        }
 
+    }
+    IEnumerator Hoge()
+    {
+        transform.Translate(Vector3.back * Time.deltaTime * moveSpeed, Space.World);
+        yield return new WaitForSeconds(1.0f);
+        hit = false;
+    }
+    void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.name=="Cube")
+        {
+            hit = true;
+        }
     }
 }
