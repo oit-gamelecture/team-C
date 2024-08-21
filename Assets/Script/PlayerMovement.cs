@@ -12,8 +12,17 @@ public class PlayerMovement : MonoBehaviour
     public bool hit;
     public bool climb;
     public bool clear;
+    public bool goal;
     private GameObject mainCamera;
     private GameObject subCamera;
+    private GameObject clearObject;
+    private GameObject Character;
+    public Vector3 targetPosition;
+    private float goalspeed = 2.0f;
+    [SerializeField] Transform target;
+    public float rotationspeed = 60f;
+
+
 
 
     // Start is called before the first frame update
@@ -22,6 +31,8 @@ public class PlayerMovement : MonoBehaviour
 
         mainCamera = GameObject.Find("MainCamera");
         subCamera = GameObject.Find("SubCamera");
+        clearObject = GameObject.Find("ClearObject");
+        Character = GameObject.Find("m01_blazer_000_h");
 
         subCamera.SetActive(false);
     }
@@ -47,7 +58,11 @@ public class PlayerMovement : MonoBehaviour
         {
             mainCamera.SetActive(false);
             subCamera.SetActive(true);
-
+            Destroy(clearObject);
+            Vector3 direction = (target.position - transform.position).normalized;
+            transform.position = Vector3.MoveTowards(transform.position, target.position, goalspeed * Time.deltaTime);
+            Quaternion targetRotation = Quaternion.LookRotation(direction);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationspeed * Time.deltaTime);
         }
 
         else
@@ -105,6 +120,13 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.name == "ClearObject")
         {
             clear = true;
+        }
+
+        if(collision.gameObject.name == "GoalObject")
+        {
+            goal = true;
+            animator.SetBool("Goal", goal);
+            Destroy(Character);
         }
     }
 
