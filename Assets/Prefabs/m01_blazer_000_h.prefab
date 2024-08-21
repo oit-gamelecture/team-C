@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4558153219438330371}
   - component: {fileID: 3319428687365804554}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: MainCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,7 +110,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400152, guid: f62377654fc015e469dfaca37f903a98, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.003
       objectReference: {fileID: 0}
     - target: {fileID: 400152, guid: f62377654fc015e469dfaca37f903a98, type: 3}
       propertyPath: m_LocalPosition.y
@@ -118,7 +118,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400152, guid: f62377654fc015e469dfaca37f903a98, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.23
+      value: 0.222
       objectReference: {fileID: 0}
     - target: {fileID: 400152, guid: f62377654fc015e469dfaca37f903a98, type: 3}
       propertyPath: m_LocalRotation.w
@@ -206,11 +206,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aa586a6bb4b55e4ca6be54148e0d9e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 6
+  moveSpeed: 4.5
   acceleration: 0.01
   leftRightSpeed: 4
-  limit: 5
+  limit: 2
   animator: {fileID: 5749101818571945847}
+  hit: 0
+  climb: 0
+  clear: 0
 --- !u!136 &3883696308817326339
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -230,10 +233,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.10701454
-  m_Height: 1.808358
+  m_Radius: 0.07849741
+  m_Height: 1.7403615
   m_Direction: 1
-  m_Center: {x: -0.10567051, y: 0.7411274, z: -0.3140384}
+  m_Center: {x: -0.03, y: 0.7751256, z: 0.05}
 --- !u!54 &6577605474450725991
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -260,7 +263,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!4 &6940638827535771103 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400152, guid: f62377654fc015e469dfaca37f903a98, type: 3}
