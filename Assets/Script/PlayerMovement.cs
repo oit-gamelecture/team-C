@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     public bool hit;
     public bool climb;
+    public bool start;
     public bool clear;
     public bool goal;
     private GameObject mainCamera;
@@ -35,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
         Character = GameObject.Find("m01_blazer_000_h");
 
         subCamera.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -63,6 +65,11 @@ public class PlayerMovement : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, target.position, goalspeed * Time.deltaTime);
             Quaternion targetRotation = Quaternion.LookRotation(direction);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationspeed * Time.deltaTime);
+        }
+
+        else if (start == true)
+        {
+          
         }
 
         else
@@ -136,6 +143,12 @@ public class PlayerMovement : MonoBehaviour
         {
             climb = true;          
         }
+
+         if (collision.gameObject.name == "StartObject")
+        {
+            start = true; 
+        }   
+
     }
 
 
